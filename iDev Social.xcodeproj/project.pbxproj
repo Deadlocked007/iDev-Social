@@ -12,9 +12,13 @@
 		C75348231E186EBD0061C42F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75348211E186EBD0061C42F /* Main.storyboard */; };
 		C75348251E186EBD0061C42F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C75348241E186EBD0061C42F /* Assets.xcassets */; };
 		C75348281E186EBD0061C42F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75348261E186EBD0061C42F /* LaunchScreen.storyboard */; };
+		C75348301E186EDA0061C42F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C753482F1E186EDA0061C42F /* GoogleService-Info.plist */; };
+		C75348321E1879440061C42F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75348311E1879440061C42F /* FeedViewController.swift */; };
+		E2E4CDE4DC0ED6769EA4084C /* Pods_iDev_Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF08D671DABB045604E0A86B /* Pods_iDev_Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4BDCF7CF594E6584F42477E /* Pods-iDev Social.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iDev Social.release.xcconfig"; path = "Pods/Target Support Files/Pods-iDev Social/Pods-iDev Social.release.xcconfig"; sourceTree = "<group>"; };
 		C753481A1E186EBD0061C42F /* iDev Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iDev Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C753481D1E186EBD0061C42F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C753481F1E186EBD0061C42F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,10 @@
 		C75348241E186EBD0061C42F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C75348271E186EBD0061C42F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C75348291E186EBD0061C42F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C753482F1E186EDA0061C42F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C75348311E1879440061C42F /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		CF44B607554BE02EEEE4C04D /* Pods-iDev Social.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iDev Social.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iDev Social/Pods-iDev Social.debug.xcconfig"; sourceTree = "<group>"; };
+		EF08D671DABB045604E0A86B /* Pods_iDev_Social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iDev_Social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E4CDE4DC0ED6769EA4084C /* Pods_iDev_Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,8 @@
 			children = (
 				C753481C1E186EBD0061C42F /* iDev Social */,
 				C753481B1E186EBD0061C42F /* Products */,
+				F4A91E9012C332CF8A0F79CA /* Pods */,
+				DD5061BE1CB9002231A5B91D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +71,27 @@
 				C75348241E186EBD0061C42F /* Assets.xcassets */,
 				C75348261E186EBD0061C42F /* LaunchScreen.storyboard */,
 				C75348291E186EBD0061C42F /* Info.plist */,
+				C753482F1E186EDA0061C42F /* GoogleService-Info.plist */,
+				C75348311E1879440061C42F /* FeedViewController.swift */,
 			);
 			path = "iDev Social";
+			sourceTree = "<group>";
+		};
+		DD5061BE1CB9002231A5B91D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF08D671DABB045604E0A86B /* Pods_iDev_Social.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4A91E9012C332CF8A0F79CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF44B607554BE02EEEE4C04D /* Pods-iDev Social.debug.xcconfig */,
+				B4BDCF7CF594E6584F42477E /* Pods-iDev Social.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C753482C1E186EBD0061C42F /* Build configuration list for PBXNativeTarget "iDev Social" */;
 			buildPhases = (
+				AE3F9BC6D798CD37BFAA0A69 /* [CP] Check Pods Manifest.lock */,
 				C75348161E186EBD0061C42F /* Sources */,
 				C75348171E186EBD0061C42F /* Frameworks */,
 				C75348181E186EBD0061C42F /* Resources */,
+				58DFC583E5F9EA59CD966F08 /* [CP] Embed Pods Frameworks */,
+				B59D7D011565A7B2F6D0F3A2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C75348281E186EBD0061C42F /* LaunchScreen.storyboard in Resources */,
+				C75348301E186EDA0061C42F /* GoogleService-Info.plist in Resources */,
 				C75348251E186EBD0061C42F /* Assets.xcassets in Resources */,
 				C75348231E186EBD0061C42F /* Main.storyboard in Resources */,
 			);
@@ -132,12 +166,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		58DFC583E5F9EA59CD966F08 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iDev Social/Pods-iDev Social-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE3F9BC6D798CD37BFAA0A69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B59D7D011565A7B2F6D0F3A2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iDev Social/Pods-iDev Social-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C75348161E186EBD0061C42F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C75348201E186EBD0061C42F /* ViewController.swift in Sources */,
+				C75348321E1879440061C42F /* FeedViewController.swift in Sources */,
 				C753481E1E186EBD0061C42F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +340,7 @@
 		};
 		C753482D1E186EBD0061C42F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF44B607554BE02EEEE4C04D /* Pods-iDev Social.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3YC9K4952Y;
@@ -270,6 +354,7 @@
 		};
 		C753482E1E186EBD0061C42F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4BDCF7CF594E6584F42477E /* Pods-iDev Social.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3YC9K4952Y;
@@ -300,6 +385,7 @@
 				C753482E1E186EBD0061C42F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
