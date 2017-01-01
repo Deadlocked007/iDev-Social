@@ -14,6 +14,9 @@
 		C75348281E186EBD0061C42F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75348261E186EBD0061C42F /* LaunchScreen.storyboard */; };
 		C75348301E186EDA0061C42F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C753482F1E186EDA0061C42F /* GoogleService-Info.plist */; };
 		C75348321E1879440061C42F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75348311E1879440061C42F /* FeedViewController.swift */; };
+		C75348341E18C75C0061C42F /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75348331E18C75C0061C42F /* PostCell.swift */; };
+		C75348361E18C7AE0061C42F /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75348351E18C7AE0061C42F /* PostViewController.swift */; };
+		C75348381E18D2310061C42F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75348371E18D2310061C42F /* Post.swift */; };
 		E2E4CDE4DC0ED6769EA4084C /* Pods_iDev_Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF08D671DABB045604E0A86B /* Pods_iDev_Social.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +31,9 @@
 		C75348291E186EBD0061C42F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C753482F1E186EDA0061C42F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C75348311E1879440061C42F /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		C75348331E18C75C0061C42F /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		C75348351E18C7AE0061C42F /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		C75348371E18D2310061C42F /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		CF44B607554BE02EEEE4C04D /* Pods-iDev Social.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iDev Social.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iDev Social/Pods-iDev Social.debug.xcconfig"; sourceTree = "<group>"; };
 		EF08D671DABB045604E0A86B /* Pods_iDev_Social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iDev_Social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,6 +79,9 @@
 				C75348291E186EBD0061C42F /* Info.plist */,
 				C753482F1E186EDA0061C42F /* GoogleService-Info.plist */,
 				C75348311E1879440061C42F /* FeedViewController.swift */,
+				C75348331E18C75C0061C42F /* PostCell.swift */,
+				C75348351E18C7AE0061C42F /* PostViewController.swift */,
+				C75348371E18D2310061C42F /* Post.swift */,
 			);
 			path = "iDev Social";
 			sourceTree = "<group>";
@@ -222,6 +231,9 @@
 				C75348201E186EBD0061C42F /* ViewController.swift in Sources */,
 				C75348321E1879440061C42F /* FeedViewController.swift in Sources */,
 				C753481E1E186EBD0061C42F /* AppDelegate.swift in Sources */,
+				C75348381E18D2310061C42F /* Post.swift in Sources */,
+				C75348341E18C75C0061C42F /* PostCell.swift in Sources */,
+				C75348361E18C7AE0061C42F /* PostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

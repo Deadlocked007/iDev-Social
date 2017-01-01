@@ -20,9 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FIRApp.configure()
         if (FIRAuth.auth()?.currentUser != nil) {
+            print("hi")
             let vc = storyboard.instantiateViewController(withIdentifier: "main")
                 as! UINavigationController
             window?.rootViewController = vc
+            print("hi")
+        } else {
+            
         }
         return true
     }
