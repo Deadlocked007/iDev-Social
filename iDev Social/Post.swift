@@ -13,6 +13,7 @@ class Post: NSObject {
 
     var text: String = ""
     private var _postKey: String!
+    var imageId: String?
     
     init(postKey: String, dictionary: Dictionary<String, AnyObject>) {
         self._postKey = postKey
@@ -20,6 +21,10 @@ class Post: NSObject {
         
         if let text = dictionary["text"] as? String {
             self.text = text
+        }
+        
+        if let imageId = dictionary["image"] as? String {
+            self.imageId = imageId
         }
         
     }

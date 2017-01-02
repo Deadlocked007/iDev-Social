@@ -12,6 +12,8 @@ import Firebase
 class FeedViewController: UITableViewController {
     
     var ref = FIRDatabase.database().reference()
+    var imageRef = FIRStorage.storage().reference()
+
     
     var posts: [Post] = []
 
@@ -86,12 +88,34 @@ class FeedViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        
+        let post = posts[indexPath.row]
+        
+        
+        
+        if let imageId = post.imageId {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostPCell", for: indexPath) as! PostPCell
+            cell.postLabel.text = post.text
+            let imageRef = self.imageRef.child("images").child(imageId)
+            
+            imageRef.data(withMaxSize: 1 * 1024 * 1024, completion: { (data, error) in
+                if let data = data {
+                    cell.postView.image = UIImage(data: data)
+                } else if let error = error {
+                    print(error.localizedDescription)
+                }
+                
+            })
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+            
+            cell.postLabel.text = post.text
+        }
 
-        cell.postLabel.text = posts[indexPath.row].text
+        
         // Configure the cell...
 
-        return cell
+        return UITableViewCell()
     }
     
 
