@@ -9,4 +9,5 @@ target 'iDev Social' do
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'AFNetworking'
 end

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import AFNetworking
 
 class FeedViewController: UITableViewController {
     
@@ -98,24 +99,22 @@ class FeedViewController: UITableViewController {
             cell.postLabel.text = post.text
             let imageRef = self.imageRef.child("images").child(imageId)
             
-            imageRef.data(withMaxSize: 1 * 1024 * 1024, completion: { (data, error) in
-                if let data = data {
-                    cell.postView.image = UIImage(data: data)
+            imageRef.downloadURL(completion: { (url, error) in
+                if let url = url {
+                    cell.postView.setImageWith(url)
                 } else if let error = error {
                     print(error.localizedDescription)
                 }
-                
             })
+            
+            return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
             
             cell.postLabel.text = post.text
+            return cell
         }
 
-        
-        // Configure the cell...
-
-        return UITableViewCell()
     }
     
 

@@ -14,11 +14,12 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     
     @IBOutlet weak var postText: UITextView!
+    @IBOutlet weak var postView: UIImageView!
     
     var postRef = FIRDatabase.database().reference()
     var imageRef = FIRStorage.storage().reference()
     
-    var postingImage: UIImage!
+    var imageId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +33,10 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func onPost(_ sender: Any) {
-        addPost(imageId: nil)
+        addPost()
     }
 
-    @IBAction func test(_ sender: Any) {
+    @IBAction func onGallery(_ sender: Any) {
         let vc = UIImagePickerController()
         vc.delegate = self
         vc.allowsEditing = true
@@ -44,25 +45,20 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.present(vc, animated: true, completion: nil)
     }
     
-    func addPost(imageId: String?) {
+    func addPost() {
         let itemRef = self.postRef.child("posts").childByAutoId()
-        
+        print("posting")
+        var postItem: [String: String] = [:]
         if (postText.text != "") {
-            var postItem = [
+            postItem = [
                 "text": postText.text,
                 ]
-            if let imageId = imageId {
-                postItem["image"] = imageId
-            }
-            
-            itemRef.setValue(postItem)
-            self.navigationController?.popViewController(animated: true)
+        } else {
+            postItem = [
+                "text": "",
+                ]
         }
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            print(image)
+        if let image = postView.image {
             let data = UIImageJPEGRepresentation(image, 0.8)
             
             let photoRef = imageRef.child("images")
@@ -74,9 +70,23 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                     print(error.localizedDescription)
                 } else {
                     print(metadata?.downloadURL() ?? "")
-                    self.addPost(imageId: uuid)
+                    postItem["image"] = uuid
+                    itemRef.setValue(postItem)
                 }
             })
+        } else {
+            itemRef.setValue(postItem)
+        }
+        
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            postView.image = image
+            
         }
         picker.dismiss(animated: true, completion: nil)
     }
