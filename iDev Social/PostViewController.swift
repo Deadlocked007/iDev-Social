@@ -10,7 +10,7 @@ import UIKit
 import Photos
 import Firebase
 
-class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
 
     
     @IBOutlet weak var postText: UITextView!
@@ -25,6 +25,12 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        postText.contentInset = UIEdgeInsetsMake(-7.0,0.0,0,0.0)
+        postText.text = "Comment"
+        postText.textColor = UIColor.lightGray
+        postText.delegate = self
+        postText.becomeFirstResponder()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,8 +97,18 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         picker.dismiss(animated: true, completion: nil)
     }
     
-  
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        postText.text = ""
+        postText.textColor = UIColor.black
+        return true
+    }
     
+    func textViewDidChange(_ textView: UITextView) {
+        if postText.text.characters.count == 0 {
+            postText.textColor = UIColor.lightGray
+            postText.text = "Comment"
+        }
+    }
     
     /*
     // MARK: - Navigation

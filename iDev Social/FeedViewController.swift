@@ -41,8 +41,8 @@ class FeedViewController: UITableViewController {
     
     func loadMessages() {
         self.ref.observe(.value, with: { (snapshot) in
+            self.posts = []
             if snapshot.hasChild("posts") {
-                self.posts = []
                 if let snapshots = snapshot.childSnapshot(forPath: "posts").children.allObjects as? [FIRDataSnapshot] {
                     for snap in snapshots {
                         if let postDict = snap.value as? Dictionary<String, AnyObject> {
