@@ -10,6 +10,7 @@ import UIKit
 
 class PostPCell: UITableViewCell {
     
+    @IBOutlet weak var userLabel: UILabel!
     
     @IBOutlet weak var postLabel: UILabel!
     @IBOutlet weak var postView: UIImageView!

@@ -15,9 +15,12 @@ class Post: NSObject {
     private var _postKey: String!
     var imageId: String?
     var image: UIImage?
+    var user: String = ""
+    var flag: Int = 0
     
     init(postKey: String, dictionary: Dictionary<String, AnyObject>) {
         self._postKey = postKey
+        
         
         
         if let text = dictionary["text"] as? String {
@@ -26,7 +29,10 @@ class Post: NSObject {
         
         if let imageId = dictionary["image"] as? String {
             self.imageId = imageId
+            flag = 1
         }
+        
+        self.user = dictionary["user"] as! String
         
     }
     

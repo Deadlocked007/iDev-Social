@@ -98,7 +98,11 @@ class FeedViewController: UITableViewController {
             print("hi")
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostPCell", for: indexPath) as! PostPCell
             cell.postLabel.text = post.text
+            
+            cell.userLabel.text = post.user
+            
             let imageRef = self.imageRef.child("images").child(imageId)
+            
             
             guard let image = post.image else {
                 imageRef.downloadURL(completion: { (url, error) in
@@ -118,11 +122,23 @@ class FeedViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
             
             cell.postLabel.text = post.text
+            cell.postLabel.sizeToFit()
             return cell
         }
 
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //print("hi2")
+        let post = posts[indexPath.row]
+        
+        if post.flag == 1 {
+            return 600
+        }
+        
+        return 250
+
+    }
 
     /*
     // Override to support conditional editing of the table view.

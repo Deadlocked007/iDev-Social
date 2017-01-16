@@ -55,15 +55,10 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let itemRef = self.postRef.child("posts").childByAutoId()
         print("posting")
         var postItem: [String: String] = [:]
-        if (postText.text != "") {
-            postItem = [
-                "text": postText.text,
-                ]
-        } else {
-            postItem = [
-                "text": "",
-                ]
-        }
+        postItem = ["text": postText.text]
+        
+        postItem["user"] = FIRAuth.auth()?.currentUser?.email!
+        
         if let image = postView.image {
             let data = UIImageJPEGRepresentation(image, 0.8)
             
@@ -83,6 +78,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         } else {
             itemRef.setValue(postItem)
         }
+        
         
         
         self.navigationController?.popViewController(animated: true)
