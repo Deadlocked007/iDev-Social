@@ -95,17 +95,23 @@ class FeedViewController: UITableViewController {
         
         
         if let imageId = post.imageId {
+            print("hi")
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostPCell", for: indexPath) as! PostPCell
             cell.postLabel.text = post.text
             let imageRef = self.imageRef.child("images").child(imageId)
             
-            imageRef.downloadURL(completion: { (url, error) in
-                if let url = url {
-                    cell.postView.setImageWith(url)
-                } else if let error = error {
-                    print(error.localizedDescription)
-                }
-            })
+            guard let image = post.image else {
+                imageRef.downloadURL(completion: { (url, error) in
+                    if let url = url {
+                        cell.postView.setImageWith(url)
+                    } else if let error = error {
+                        print(error.localizedDescription)
+                    }
+                })
+                return cell
+            }
+            
+            cell.postView.image = image
             
             return cell
         } else {

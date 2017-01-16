@@ -14,6 +14,7 @@ class Post: NSObject {
     var text: String = ""
     private var _postKey: String!
     var imageId: String?
+    var image: UIImage?
     
     init(postKey: String, dictionary: Dictionary<String, AnyObject>) {
         self._postKey = postKey
